@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:atmui/menu.dart';
-import 'Pin.dart';
 
 class Phone extends StatefulWidget {
   static const String id = "Phone";
@@ -10,7 +9,7 @@ class Phone extends StatefulWidget {
   _PhoneState createState() => _PhoneState();
 }
 
-class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
+class _PhoneState extends State<Phone> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   final _phoneController = TextEditingController();
   final _otpController = TextEditingController();
@@ -109,26 +108,17 @@ class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
     }
   }
 
-  AnimationController aniController;
   String aText = 'Loop';
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    aniController =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
-    aniController.forward();
-
-    aniController.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    aniController.dispose();
   }
 
   @override

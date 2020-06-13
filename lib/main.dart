@@ -1,5 +1,5 @@
 import 'package:atmui/Phone.dart';
-import 'package:atmui/Pin.dart';
+
 import 'package:atmui/StartPage.dart';
 import 'package:atmui/menu.dart';
 import 'Phone.dart';
@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       routes: {
         StartPage.id: (context) => StartPage(),
         Phone.id: (context) => Phone(),
-        Pin.id: (context) => Pin(),
         Menu.id: (context) => Menu()
       },
     );
