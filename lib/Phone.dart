@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-
+import 'package:atmui/menu.dart';
 import 'Pin.dart';
 
 class Phone extends StatefulWidget {
@@ -12,10 +12,105 @@ class Phone extends StatefulWidget {
 
 class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
   FirebaseAuth _auth = FirebaseAuth.instance;
-  String phoneno;
+  final _phoneController = TextEditingController();
+  final _otpController = TextEditingController();
+
+  Future<bool> LoginUser(String phone, BuildContext context) async {
+    try {
+      _auth.verifyPhoneNumber(
+          phoneNumber: "+91" + phone,
+          timeout: Duration(seconds: 10),
+          verificationCompleted: (AuthCredential credential) async {
+            Navigator.of(context).pop(); // to disable the pop up window.
+
+            AuthResult result = await _auth.signInWithCredential(credential);
+            FirebaseUser user = result.user;
+            try {
+              if (user != null) {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Menu()));
+              }
+            } catch (e) {
+              print(e);
+            }
+          },
+          verificationFailed: (AuthException exception) {
+            print(exception);
+          },
+          codeSent: (String verificationId, [int forceResendingToken]) async {
+            showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("OTP"),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        TextField(
+                          controller: _otpController,
+                        )
+                      ],
+                    ),
+                    actions: <Widget>[
+                      Opacity(
+                          opacity: 0.7,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 16),
+                            child: Material(
+                              elevation: 5,
+                              color: Color(0xFF311b92),
+                              //color: Colors.white,
+                              borderRadius: BorderRadius.circular(30.0),
+                              child: MaterialButton(
+                                onPressed: () async {
+                                  final code = _otpController.text.trim();
+                                  AuthCredential credential =
+                                      PhoneAuthProvider.getCredential(
+                                          verificationId: verificationId,
+                                          smsCode: code);
+                                  AuthResult result = await _auth
+                                      .signInWithCredential(credential);
+                                  FirebaseUser user = result.user;
+                                  try {
+                                    if (user != null) {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (BuildContext context) =>
+                                                  Menu()));
+                                    }
+                                  } catch (e) {
+                                    print(e);
+                                  }
+                                },
+                                child: Center(
+                                  child: Text(
+                                    "Enter",
+                                    style: TextStyle(
+                                        fontFamily: 'Rounded',
+                                        fontSize: 20,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )),
+                    ],
+                    shape: CircleBorder(),
+                  );
+                });
+          },
+          codeAutoRetrievalTimeout: null);
+    } catch (e) {
+      print(e);
+    }
+  }
 
   AnimationController aniController;
-  String aText = 'idle';
+  String aText = 'Loop';
   @override
   void initState() {
     // TODO: implement initState
@@ -44,7 +139,7 @@ class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
           child: Stack(
             children: <Widget>[
               FlareActor(
-                'Animation/login.flr',
+                'Animation/Splash7.flr',
                 animation: aText,
                 fit: BoxFit.cover,
               ),
@@ -59,9 +154,7 @@ class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
                       textAlign: TextAlign.center,
                       //to be used later maxLength: ,
                       //keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        phoneno = value;
-                      },
+                      controller: _phoneController,
                       style: TextStyle(
                         height: 1.5, //height of the cursor
                       ),
@@ -145,15 +238,7 @@ class _PhoneState extends State<Phone> with SingleTickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(30.0),
                         child: MaterialButton(
                           onPressed: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) => Pin(
-                                          phoneno: phoneno.trim(),
-                                        )));
-//                            setState(() {
-//                              aText = "success";
-//                            });
+                            LoginUser(_phoneController.text.trim(), context);
                           },
                           minWidth: 250.0,
                           height: 42.0,

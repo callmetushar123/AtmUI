@@ -18,39 +18,51 @@ class _PinState extends State<Pin> with SingleTickerProviderStateMixin {
   int flag = 0;
 
   Future<bool> LoginUser(String phone) async {
-    _auth.verifyPhoneNumber(
-        phoneNumber: phone,
-        timeout: Duration(seconds: 60),
-        verificationCompleted: (AuthCredential credential) async {
-          AuthResult result = await _auth.signInWithCredential(credential);
-          FirebaseUser user = result.user;
-          if (user != null) {
-            setState(() {
-              aText = "success";
-            });
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (BuildContext context) => Menu()));
-          }
-        },
-        verificationFailed: (AuthException exception) {
-          print(exception);
-        },
-        codeSent: (String verificationId, [int forceResendingToken]) async {
-          AuthResult result;
-          AuthCredential credential = PhoneAuthProvider.getCredential(
-              verificationId: verificationId, smsCode: pin.trim());
-          if (flag == 1) result = await _auth.signInWithCredential(credential);
-          FirebaseUser user = result.user;
+    try {
+      _auth.verifyPhoneNumber(
+          phoneNumber: phone,
+          timeout: Duration(seconds: 60),
+          verificationCompleted: null,
+//          (AuthCredential credential) async {
+//            AuthResult result = await _auth.signInWithCredential(credential);
+//            FirebaseUser user = result.user;
+//            try {
+//              if (user != null) {
+//                setState(() {
+//                  aText = "success";
+//                });
+//                Navigator.pushReplacement(
+//                    context,
+//                    MaterialPageRoute(
+//                        builder: (BuildContext context) => Menu()));
+//              }
+//            } catch (e) {
+//              print(e);
+//            }
+//          },
+          verificationFailed: (AuthException exception) {
+            print(exception);
+          },
+          codeSent: (String verificationId, [int forceResendingToken]) async {
+            AuthResult result;
+            AuthCredential credential = PhoneAuthProvider.getCredential(
+                verificationId: verificationId, smsCode: pin.trim());
+            result = await _auth.signInWithCredential(credential);
 
-          if (user != null) {
-            setState(() {
-              aText = "success";
-            });
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (BuildContext context) => Menu()));
-          }
-        },
-        codeAutoRetrievalTimeout: null);
+            FirebaseUser user = result.user;
+            print("This step is completed");
+            if (user != null) {
+              setState(() {
+                aText = "success";
+              });
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (BuildContext context) => Menu()));
+            }
+          },
+          codeAutoRetrievalTimeout: null);
+    } catch (e) {
+      print(e);
+    }
   }
 
   AnimationController aniController;
