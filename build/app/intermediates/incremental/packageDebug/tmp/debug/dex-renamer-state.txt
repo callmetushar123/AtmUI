@@ -1,0 +1,4 @@
+#Sat Jun 13 15:23:40 IST 2020
+base.0=D\:\\iAmRich\\atmui\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
