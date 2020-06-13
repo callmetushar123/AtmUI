@@ -78,29 +78,6 @@ class _StartPageState extends State<StartPage>
               Column(
                 //mainAxisAlignment: MainAxisAlignment.end, doesn't work because it is a stack
                 children: <Widget>[
-//                  Center(
-//                    child: Padding(
-//                      padding: EdgeInsets.symmetric(vertical: 16),
-//                      child: Material(
-//                        elevation: aniController.value * 5,
-//                        color: Color(0xFF311b92),
-//                        //color: Colors.white,
-//                        borderRadius: BorderRadius.circular(30.0),
-//                        child: MaterialButton(
-//                          onPressed: () {},
-//                          minWidth: aniController.value * 250.0,
-//                          height: aniController.value * 42.0,
-//                          child: Text(
-//                            "New User",
-//                            style: TextStyle(
-//                                fontFamily: 'Rounded',
-//                                fontSize: aniController.value * 20,
-//                                color: Colors.white),
-//                          ),
-//                        ),
-//                      ),
-//                    ),
-//                  ),
                   Center(
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 50),

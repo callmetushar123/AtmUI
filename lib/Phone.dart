@@ -142,8 +142,6 @@ class _PhoneState extends State<Phone> {
                     margin: EdgeInsets.symmetric(horizontal: 10),
                     child: TextField(
                       textAlign: TextAlign.center,
-                      //to be used later maxLength: ,
-                      //keyboardType: TextInputType.number,
                       controller: _phoneController,
                       style: TextStyle(
                         height: 1.5, //height of the cursor
