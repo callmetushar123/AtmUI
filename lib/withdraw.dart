@@ -1,3 +1,4 @@
+import 'package:atmui/transactionFailedAnimation.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
@@ -136,8 +137,8 @@ class _WithdrawState extends State<Withdraw> {
     int amt = int.parse(_amtController.text);
 
     if ((currentBalance <= 0 && amt >= 0) || (amt > currentBalance)) {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => Error()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (BuildContext context) => TFA()));
     } else {
       currentBalance -= amt;
       updateData();
