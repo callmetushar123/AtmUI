@@ -52,7 +52,7 @@ class _StartPageState extends State<StartPage>
               Container(
                 child: Center(
                   child: Text(
-                    'AECB',
+                    'AEC Bank',
                     style: TextStyle(
                         fontFamily: 'Rounded',
                         color: Colors.white,
@@ -64,7 +64,7 @@ class _StartPageState extends State<StartPage>
                 child: Container(
                   //width: double.infinity,
                   child: Text(
-                    '4 din me paisa double Bank',
+                    '4 din me paisa double',
                     style: TextStyle(
                         fontFamily: 'Rounded',
                         color: Colors.white,
