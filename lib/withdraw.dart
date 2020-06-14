@@ -30,8 +30,8 @@ class _WithdrawState extends State<Withdraw> {
           child: Stack(
             children: <Widget>[
               FlareActor(
-                'Animation/Splash7.flr',
-                animation: "Loop",
+                'Animation/Splash10.flr',
+                animation: "Start",
                 fit: BoxFit.cover,
               ),
               Column(

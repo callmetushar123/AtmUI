@@ -16,13 +16,14 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Container(
           child: Stack(
             fit: StackFit.expand,
             children: <Widget>[
               FlareActor(
-                'Animation/Splash7.flr',
-                animation: "Loop",
+                'Animation/Splash10.flr',
+                animation: "Start",
                 fit: BoxFit.cover,
               ),
               Column(

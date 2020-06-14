@@ -29,8 +29,8 @@ class _DepositState extends State<Deposit> {
           child: Stack(
             children: <Widget>[
               FlareActor(
-                'Animation/Splash7.flr',
-                animation: "Loop",
+                'Animation/Splash10.flr',
+                animation: "Start",
                 fit: BoxFit.cover,
               ),
               Column(

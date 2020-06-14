@@ -109,7 +109,7 @@ class _PhoneState extends State<Phone> {
     }
   }
 
-  String aText = 'Loop';
+  String aText = 'Start';
   @override
   void initState() {
     // TODO: implement initState
@@ -130,7 +130,7 @@ class _PhoneState extends State<Phone> {
           child: Stack(
             children: <Widget>[
               FlareActor(
-                'Animation/Splash7.flr',
+                'Animation/Splash10.flr',
                 animation: aText,
                 fit: BoxFit.cover,
               ),
