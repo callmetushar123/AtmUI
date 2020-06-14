@@ -40,7 +40,7 @@ class _StartPageState extends State<StartPage>
           child: Stack(
         children: <Widget>[
           FlareActor(
-            'Animation/atom.flr',
+            'Animation/Splash10.flr',
             animation: 'Start', //Sun Rotate
             fit: BoxFit.none,
           ),
