@@ -18,7 +18,7 @@ class _DepositBalanceProcessState extends State<DepositBalanceProcess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(39, 50, 80, 0.2),
+      backgroundColor: Colors.white,
       body: Center(
         child: FutureBuilder(
           future: readData(),
@@ -30,6 +30,7 @@ class _DepositBalanceProcessState extends State<DepositBalanceProcess> {
                   animation: 'Start',
                   fit: BoxFit.none,
                   callback: (String yo) {
+                    //this callback works only if the animation is not in a loop.
                     print(yo);
                     Navigator.push(
                         context,

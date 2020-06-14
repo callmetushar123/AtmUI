@@ -19,7 +19,7 @@ class _WithdrawBalanceProcessState extends State<WithdrawBalanceProcess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(39, 50, 80, 0.2),
+      backgroundColor: Colors.white,
       body: Center(
         child: Container(
           child: FutureBuilder(
