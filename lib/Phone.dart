@@ -98,7 +98,8 @@ class _PhoneState extends State<Phone> {
                             ),
                           )),
                     ],
-                    shape: CircleBorder(),
+                    //shape: RoundedRectangleBorder(),
+                    elevation: 24.0,
                   );
                 });
           },

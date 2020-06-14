@@ -32,6 +32,24 @@
       "languageVersion": "1.0"
     },
     {
+      "name": "cloud_firestore",
+      "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "cloud_firestore_platform_interface",
+      "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "cloud_firestore_web",
+      "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.1.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11",
       "packageUri": "lib/",
@@ -94,6 +112,12 @@
     {
       "name": "firebase_core_web",
       "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "firebase_database",
+      "rootUri": "file:///D:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.1.6",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -266,7 +290,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-06-13T07:34:13.465119Z",
+  "generated": "2020-06-13T17:12:33.109860Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.14.0.flutter-7c5059f528"
 }

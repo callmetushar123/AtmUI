@@ -1,5 +1,8 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+
+import 'WithdrawBalanceView.dart';
 
 class Withdraw extends StatefulWidget {
   static const String id = "Withdraw";
@@ -8,7 +11,16 @@ class Withdraw extends StatefulWidget {
 }
 
 class _WithdrawState extends State<Withdraw> {
+  int currentBalance;
   final _amtController = TextEditingController();
+  final dbRef = FirebaseDatabase.instance.reference();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    readData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +87,9 @@ class _WithdrawState extends State<Withdraw> {
                         //color: Colors.white,
                         borderRadius: BorderRadius.circular(30.0),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            cal();
+                          },
                           minWidth: 250.0,
                           height: 42.0,
                           child: Text(
@@ -96,6 +110,30 @@ class _WithdrawState extends State<Withdraw> {
         ),
       ),
     );
-    ;
+  }
+
+  void updateData() async {
+    await dbRef.child("1").update({
+      "balance": currentBalance,
+    });
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) => WithdrawBalanceView()));
+  }
+
+  void readData() {
+    dbRef.child("1").once().then((DataSnapshot dataSnapShot) async {
+      currentBalance = await dataSnapShot.value["balance"];
+
+//      print(dataSnapShot.value["balance"]);
+      print(currentBalance);
+    });
+  }
+
+  void cal() {
+    currentBalance -= int.parse(_amtController.text);
+    updateData();
   }
 }

@@ -1,7 +1,8 @@
+import 'package:atmui/BalanceView.dart';
 import 'package:atmui/withdraw.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 import 'deposit.dart';
 
 class Menu extends StatefulWidget {
@@ -34,7 +35,13 @@ class _MenuState extends State<Menu> {
                       //color: Colors.white,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      BalanceView()));
+                        },
                         minWidth: 250.0,
                         height: 80.0,
                         child: Text(
