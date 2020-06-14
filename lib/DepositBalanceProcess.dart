@@ -1,14 +1,14 @@
-import 'package:atmui/test.dart';
+import 'package:atmui/DepositBalanceView.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
-class DepositBalanceView extends StatefulWidget {
+class DepositBalanceProcess extends StatefulWidget {
   @override
-  _DepositBalanceViewState createState() => _DepositBalanceViewState();
+  _DepositBalanceProcessState createState() => _DepositBalanceProcessState();
 }
 
-class _DepositBalanceViewState extends State<DepositBalanceView> {
+class _DepositBalanceProcessState extends State<DepositBalanceProcess> {
   int currentBalance;
   String userName;
   int cardNo;
@@ -34,7 +34,12 @@ class _DepositBalanceViewState extends State<DepositBalanceView> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => Test()));
+                            builder: (BuildContext context) =>
+                                DepositeBalanceView(
+                                  cardNo: cardNo,
+                                  currentBalance: currentBalance,
+                                  userName: userName,
+                                )));
                   },
                 ),
               );

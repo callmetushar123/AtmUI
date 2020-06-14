@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Test extends StatelessWidget {
+class WithdrawBalanceView extends StatelessWidget {
   final int currentBalance;
   final String userName;
   final int cardNo;
-  Test({this.currentBalance, this.cardNo, this.userName});
+  WithdrawBalanceView({this.currentBalance, this.cardNo, this.userName});
 
   @override
   Widget build(BuildContext context) {

@@ -64,7 +64,7 @@ class _StartPageState extends State<StartPage>
                 child: Container(
                   //width: double.infinity,
                   child: Text(
-                    'Welcome to AEC Bank',
+                    '4 din me paisa double Bank',
                     style: TextStyle(
                         fontFamily: 'Rounded',
                         color: Colors.white,

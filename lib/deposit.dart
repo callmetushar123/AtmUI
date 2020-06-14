@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:atmui/DepositBalanceView.dart';
+import 'package:atmui/DepositBalanceProcess.dart';
 
 class Deposit extends StatefulWidget {
   static const String id = "Deposit";
@@ -119,7 +119,7 @@ class _DepositState extends State<Deposit> {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (BuildContext context) => DepositBalanceView()));
+            builder: (BuildContext context) => DepositBalanceProcess()));
   }
 
   void readData() async {

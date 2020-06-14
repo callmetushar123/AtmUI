@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'Error.dart';
-import 'WithdrawBalanceView.dart';
+import 'WithdrawBalanceProcess.dart';
 
 class Withdraw extends StatefulWidget {
   static const String id = "Withdraw";
@@ -120,7 +120,7 @@ class _WithdrawState extends State<Withdraw> {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (BuildContext context) => WithdrawBalanceView()));
+            builder: (BuildContext context) => WithdrawBalanceProcess()));
   }
 
   void readData() {
