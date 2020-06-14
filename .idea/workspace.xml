@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f7e5840-e37d-4dcd-96e0-0665f5a71a37" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/Error.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/withdraw.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/withdraw.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

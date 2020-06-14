@@ -134,11 +134,12 @@ class _WithdrawState extends State<Withdraw> {
 
   void cal() {
     int amt = int.parse(_amtController.text);
-    if (currentBalance == 0 && amt >= 0) {
+    if (currentBalance <= 0 && amt >= 0) {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (BuildContext context) => Error()));
+    } else {
+      currentBalance -= amt;
+      updateData();
     }
-    currentBalance -= amt;
-    updateData();
   }
 }
