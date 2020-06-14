@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-
+import 'Error.dart';
 import 'WithdrawBalanceView.dart';
 
 class Withdraw extends StatefulWidget {
@@ -133,7 +133,12 @@ class _WithdrawState extends State<Withdraw> {
   }
 
   void cal() {
-    currentBalance -= int.parse(_amtController.text);
+    int amt = int.parse(_amtController.text);
+    if (currentBalance == 0 && amt >= 0) {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (BuildContext context) => Error()));
+    }
+    currentBalance -= amt;
     updateData();
   }
 }
