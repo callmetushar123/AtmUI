@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Menu.id,
+      initialRoute: StartPage.id,
       routes: {
         StartPage.id: (context) => StartPage(),
         Phone.id: (context) => Phone(),

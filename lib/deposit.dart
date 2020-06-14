@@ -115,15 +115,15 @@ class _DepositState extends State<Deposit> {
     await dbRef.child("1").update({
       "balance": currentBalance,
     });
-
+    print(currentBalance);
     Navigator.push(
         context,
         MaterialPageRoute(
             builder: (BuildContext context) => DepositBalanceView()));
   }
 
-  void readData() {
-    dbRef.child("1").once().then((DataSnapshot dataSnapShot) async {
+  void readData() async {
+    await dbRef.child("1").once().then((DataSnapshot dataSnapShot) async {
       currentBalance = await dataSnapShot.value["balance"];
 
 //      print(dataSnapShot.value["balance"]);
