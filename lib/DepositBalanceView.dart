@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:atmui/menu.dart';
 
 class DepositeBalanceView extends StatelessWidget {
   final int currentBalance;
@@ -9,7 +10,7 @@ class DepositeBalanceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(39, 50, 80, 0.2),
+      backgroundColor: Color.fromRGBO(50, 125, 219, 0.3),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,8 +54,8 @@ class DepositeBalanceView extends StatelessWidget {
                 height: 150,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
-                      Colors.blueGrey,
-                      Color.fromRGBO(41, 69, 93, 0.4)
+                      Colors.purple,
+                      Color.fromRGBO(59, 131, 219, 0.3),
                     ]),
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Center(
@@ -75,6 +76,35 @@ class DepositeBalanceView extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Material(
+                elevation: 5,
+
+                color: Color.fromRGBO(199, 199, 228, 0.6),
+                //color: Colors.white,
+                borderRadius: BorderRadius.circular(20.0),
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Menu()));
+                  },
+                  minWidth: 120.0,
+                  height: 30.0,
+                  child: Text(
+                    "Go Back",
+                    style: TextStyle(
+                        fontFamily: 'Rounded',
+                        fontSize: 20,
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+//
+            ),
+            SizedBox(
+              height: 15,
+            ),
             Text(
               "STATEMENT FOR YOUR CARD " + cardNo.toString(),
               style:
@@ -82,6 +112,7 @@ class DepositeBalanceView extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
+                itemCount: 6,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -92,12 +123,12 @@ class DepositeBalanceView extends StatelessWidget {
                       ),
                       child: ListTile(
                         title: Text(
-                          "Transaction $index",
+                          "Transaction ${index + 1}",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                         subtitle: Text(
-                          "Some brief detail of transaction no $index",
+                          "Some brief detail of transaction no ${index + 1}",
                           style: TextStyle(color: Colors.white),
                         ),
                         contentPadding: EdgeInsets.only(

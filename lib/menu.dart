@@ -2,6 +2,7 @@ import 'package:atmui/BalanceView.dart';
 import 'package:atmui/withdraw.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import 'package:atmui/StartPage.dart';
 
 import 'deposit.dart';
 
@@ -16,7 +17,7 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(244, 229, 232, 1),
         body: Container(
           child: Stack(
             fit: StackFit.expand,
@@ -32,7 +33,7 @@ class _MenuState extends State<Menu> {
                   Center(
                     child: Material(
                       elevation: 5,
-                      color: Color(0xFF311b92),
+                      color: Color.fromRGBO(14, 197, 207, 0.7),
                       //color: Colors.white,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
@@ -58,7 +59,7 @@ class _MenuState extends State<Menu> {
                   Center(
                     child: Material(
                       elevation: 5,
-                      color: Color(0xFF311b92),
+                      color: Color.fromRGBO(14, 197, 207, 0.7),
                       //color: Colors.white,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
@@ -84,7 +85,7 @@ class _MenuState extends State<Menu> {
                   Center(
                     child: Material(
                       elevation: 5,
-                      color: Color(0xFF311b92),
+                      color: Color.fromRGBO(14, 197, 207, 0.8),
                       //color: Colors.white,
                       borderRadius: BorderRadius.circular(30.0),
                       child: MaterialButton(
@@ -99,6 +100,32 @@ class _MenuState extends State<Menu> {
                         height: 80.0,
                         child: Text(
                           "Deposit",
+                          style: TextStyle(
+                              fontFamily: 'Rounded',
+                              fontSize: 20,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Material(
+                      elevation: 5,
+                      color: Color.fromRGBO(14, 197, 207, 0.8),
+                      //color: Colors.white,
+                      borderRadius: BorderRadius.circular(30.0),
+                      child: MaterialButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      StartPage()));
+                        },
+                        minWidth: 250.0,
+                        height: 80.0,
+                        child: Text(
+                          "Exit",
                           style: TextStyle(
                               fontFamily: 'Rounded',
                               fontSize: 20,

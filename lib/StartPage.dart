@@ -64,7 +64,7 @@ class _StartPageState extends State<StartPage>
                 child: Container(
                   //width: double.infinity,
                   child: Text(
-                    '4 din me paisa double',
+                    'Welcome to our Bank Services',
                     style: TextStyle(
                         fontFamily: 'Rounded',
                         color: Colors.white,
@@ -83,7 +83,7 @@ class _StartPageState extends State<StartPage>
                       padding: EdgeInsets.symmetric(vertical: 50),
                       child: Material(
                         elevation: aniController.value * 5,
-                        color: Color(0xFF311b92),
+                        color: Color.fromRGBO(14, 197, 207, 0.76),
                         //color: Colors.white,
                         borderRadius: BorderRadius.circular(30.0),
                         child: MaterialButton(
