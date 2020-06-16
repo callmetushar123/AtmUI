@@ -59,33 +59,42 @@ class _ErrorState extends State<Error> {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Material(
-                  elevation: 5,
 
-                  color: Color.fromRGBO(199, 199, 228, 0.6),
-                  //color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => StartPage()));
-                    },
-                    minWidth: 120.0,
-                    height: 30.0,
-                    child: Text(
-                      "Exit",
-                      style: TextStyle(
-                          fontFamily: 'Rounded',
-                          fontSize: 20,
-                          color: Colors.white),
+              Align(
+                alignment: Alignment.center,
+                child: Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 148,
                     ),
-                  ),
-                ),
+                    Material(
+                      elevation: 5,
+
+                      color: Color.fromRGBO(199, 199, 228, 0.6),
+                      //color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      child: MaterialButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        minWidth: 190.0,
+                        height: 30.0,
+                        child: Text(
+                          "Go Back",
+
+                          style: TextStyle(
+                              fontFamily: 'Rounded',
+                              fontSize: 20,
+                              color: Colors.white),
+                        ),
+
+
+                      ),
+                    ),
+                  ],
+
 //
+                ),
               ),
             ],
           ),
