@@ -1,10 +1,10 @@
-#Mon Jun 15 20:02:01 IST 2020
+#Tue Jun 16 10:16:50 IST 2020
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=D\:\\iAmRich\\atmui\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
-base.1=D\:\\iAmRich\\atmui\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
-base.0=D\:\\iAmRich\\atmui\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+base.2=C\:\\Users\\zafer\\StudioProjects\\AtmUI\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
+base.1=C\:\\Users\\zafer\\StudioProjects\\AtmUI\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+base.0=C\:\\Users\\zafer\\StudioProjects\\AtmUI\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex

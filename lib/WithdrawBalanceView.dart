@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:atmui/menu.dart';
+import 'package:atmui/menu.dart';
 
 class WithdrawBalanceView extends StatelessWidget {
   final int currentBalance;
@@ -76,30 +77,39 @@ class WithdrawBalanceView extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Material(
-                elevation: 5,
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: 148,
+                ),
+                Material(
+                  elevation: 5,
 
-                color: Color.fromRGBO(199, 199, 228, 0.6),
-                //color: Colors.white,
-                borderRadius: BorderRadius.circular(20.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Menu()));
-                  },
-                  minWidth: 120.0,
-                  height: 30.0,
-                  child: Text(
-                    "Go Back",
-                    style: TextStyle(
-                        fontFamily: 'Rounded',
-                        fontSize: 20,
-                        color: Colors.white),
+                  color: Color.fromRGBO(199, 199, 228, 0.6),
+                  //color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: MaterialButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Menu()));
+                    },
+                    minWidth: 190.0,
+                    height: 30.0,
+                    child: Text(
+                      "Go Back",
+
+                      style: TextStyle(
+                          fontFamily: 'Rounded',
+                          fontSize: 20,
+                          color: Colors.white),
+                    ),
+
+
                   ),
                 ),
-              ),
+              ],
+
 //
             ),
             SizedBox(

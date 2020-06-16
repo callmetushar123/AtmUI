@@ -68,7 +68,7 @@ class _StartPageState extends State<StartPage>
                     style: TextStyle(
                         fontFamily: 'Rounded',
                         color: Colors.white,
-                        fontSize: 30),
+                        fontSize: 21),
                   ),
                 ),
               ),

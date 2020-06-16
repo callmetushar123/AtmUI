@@ -92,29 +92,37 @@ class _BalanceViewState extends State<BalanceView> {
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Material(
-                        elevation: 5,
-
-                        color: Color.fromRGBO(199, 199, 228, 0.6),
-                        //color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: MaterialButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          minWidth: 120.0,
-                          height: 30.0,
-                          child: Text(
-                            "Go Back",
-                            style: TextStyle(
-                                fontFamily: 'Rounded',
-                                fontSize: 20,
-                                color: Colors.white),
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            width: 148,
                           ),
-                        ),
-                      ),
+                           Material(
+                            elevation: 5,
+
+                            color: Color.fromRGBO(199, 199, 228, 0.6),
+                            //color: Colors.white,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              minWidth: 190.0,
+                              height: 30.0,
+                              child: Text(
+                                "Go Back",
+
+                                style: TextStyle(
+                                    fontFamily: 'Rounded',
+                                    fontSize: 20,
+                                    color: Colors.white),
+                              ),
+
+
+                            ),
+                          ),
+                        ],
+
 //
                     ),
                     SizedBox(

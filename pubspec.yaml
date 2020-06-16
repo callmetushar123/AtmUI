@@ -16,7 +16,7 @@ dependencies:
   rive: ^0.0.1
   flare_flutter: any
   firebase_auth: ^0.16.1
-  cloud_firestore: ^0.13.6
+  cloud_firestore: any
   firebase_core: ^0.4.5
   firebase_database: ^3.1.6
 
