@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:atmui/menu.dart';
+import 'package:atmui/menu.dart';
 
 class WithdrawBalanceView extends StatelessWidget {
   final int currentBalance;
@@ -89,7 +90,9 @@ class WithdrawBalanceView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.0),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Menu()));
                     },
                     minWidth: 190.0,
                     height: 30.0,

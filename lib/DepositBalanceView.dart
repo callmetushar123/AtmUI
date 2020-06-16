@@ -89,7 +89,9 @@ class DepositeBalanceView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.0),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Menu()));
                     },
                     minWidth: 190.0,
                     height: 30.0,

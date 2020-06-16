@@ -75,12 +75,16 @@ class _ErrorState extends State<Error> {
                       borderRadius: BorderRadius.circular(20.0),
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      StartPage()));
                         },
                         minWidth: 190.0,
                         height: 30.0,
                         child: Text(
-                          "Go Back",
+                          "Exit",
 
                           style: TextStyle(
                               fontFamily: 'Rounded',
